@@ -1,28 +1,74 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
   // Contact form handling
-  const nodemailer = require('nodemailer');
+  // const nodemailer = require('nodemailer');
 
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'youremail@gmail.com',
-      pass: 'yourpassword_or_app_password'
-    }
-  });
+  // const transporter = nodemailer.createTransport({
+  //   service: 'Gmail',
+  //   auth: {
+  //     user: 'youremail@gmail.com',
+  //     pass: 'yourpassword_or_app_password'
+  //   }
+  // });
   
-  const mailOptions = {
-    from: 'youremail@gmail.com',
-    to: 'recipient@example.com',
-    subject: 'Subject Here',
-    text: 'Your message here'
-  };
+  // const mailOptions = {
+  //   from: 'youremail@gmail.com',
+  //   to: 'recipient@example.com',
+  //   subject: 'Subject Here',
+  //   text: 'Your message here'
+  // };
   
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log('Email sent: ' + info.response);
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     console.error(error);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
+  const contactForm = document.getElementById('contactForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      console.log(email);
+      console.log("Email")
+      
+      const message = document.getElementById('message').value;
+      const number = document.getElementById('number').value;
+
+
+        // Using EmailJS to send emails from client-side
+      const templateParams = {
+        title: name,
+        from_name: name,
+        reply_to: email,
+        email: email,
+        message: message,
+        number: number,
+        from_email: email
+      };
+      
+      emailjs.send('service_j6rxabe', 'template_2g04g09', templateParams)
+        .then(function() {
+          showToast('Message Sent!', 'We\'ll get back to you soon.');
+          contactForm.reset();
+        }, function(error) {
+          console.error('Email error:', error);
+          showToast('Error', 'Failed to send message. Please try again.');
+          contactForm.reset();
+        });
+    });
+  }
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const phone = document.getElementById("number").value;
+    const regex = /^\+?[0-9]{10,15}$/;
+    if (!regex.test(phone)) {
+      e.preventDefault();
+      alert("Please enter a valid phone number (10–15 digits, optional +).");
     }
   });
   
@@ -43,6 +89,25 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+    // Initialize pricing section toggle functionality if it exists
+  const pricingToggle = document.getElementById('billingToggle');
+  if (pricingToggle) {
+    pricingToggle.addEventListener('change', function() {
+      const monthlyPrices = document.querySelectorAll('.price-monthly');
+      const yearlyPrices = document.querySelectorAll('.price-yearly');
+      
+      if (this.checked) {
+        // Yearly
+        monthlyPrices.forEach(el => el.style.display = 'none');
+        yearlyPrices.forEach(el => el.style.display = 'block');
+      } else {
+        // Monthly
+        monthlyPrices.forEach(el => el.style.display = 'block');
+        yearlyPrices.forEach(el => el.style.display = 'none');
+      }
+    });
+  }
 });
 
 // Toast notification function
