@@ -338,12 +338,21 @@ html {
     margin-bottom: 0.5rem;
     width: 500px;
     background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, rgb(60, 117, 231) 100%);
+    border: none;
+    color: #f5f7fa;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+
   }
    .form-group textarea {
     border-radius: 10px;
     height: 70px;
     width: 500px;
     background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, rgb(60, 117, 231) 100%);
+    border: none;
+    color: #f5f7fa;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+
   }
 
 
