@@ -2,7 +2,7 @@
 /* Base Styles */
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   
   body {
@@ -691,14 +691,13 @@ input:checked + .toggle-slider:before {
 @media (max-width: 430px) {
   body {
     width: 100%;
+    overflow-x:hidden;
   }
-  footer, .contact {
-    /* display: flex;  */
+  footer {
+    display: flex; 
     flex-direction: column;
-    /* height: 100%; */
+    height: 100%;
     width: 100%;
-    margin: 0;
-    float: none;
   }
   .form-group input {
     width: 300px;
