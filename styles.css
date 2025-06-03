@@ -692,11 +692,13 @@ input:checked + .toggle-slider:before {
   body {
     width: 100%;
   }
-  footer {
-    display: flex; 
+  footer, .contact {
+    /* display: flex;  */
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
+    margin: 0;
+    float: none;
   }
   .form-group input {
     width: 300px;
