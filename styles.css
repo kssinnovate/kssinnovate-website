@@ -694,6 +694,7 @@ input:checked + .toggle-slider:before {
   }
 
   html {
+    width: 100%;
     overflow-x: hidden;
   }
   footer {
