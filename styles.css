@@ -2,7 +2,8 @@
 /* Base Styles */
 html {
     scroll-behavior: smooth;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
   
   body {
@@ -12,7 +13,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: #fafafa;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -691,7 +692,7 @@ input:checked + .toggle-slider:before {
 @media (max-width: 430px) {
   body {
     width: 100%;
-    overflow-x:hidden;
+    /* overflow-x:hidden; */
   }
   footer {
     display: flex; 
