@@ -690,6 +690,8 @@ input:checked + .toggle-slider:before {
   body {
     width: 100%;
     overflow-x:hidden;
+    scroll-behavior: smooth;
+
   }
 
   html {
