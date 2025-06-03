@@ -228,11 +228,13 @@ html {
   /* Footer */
   footer {
     background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+    position: relative;
     color: white;
     padding: 3rem 2rem;
     width: 100%;
     height: 420.77px;
     display: flex;
+    justify-content: space-between;
   }
   footer div a {
     color: white;
@@ -251,11 +253,14 @@ html {
   }
 
   .contact-info {
+    position: absolute;
+    left: 38%;
     border-radius: 8px;
     height: 324.78px;
     width: 324.78px;
-    margin-right: 500px;
+    /* margin-right: 500px; */
     justify-content: center;
+    align-items: center;
   }
   .contact-info h3 {
     color: white;
@@ -282,19 +287,19 @@ html {
     gap: 1rem;
   }
   
-   .contact {
+  .contact {
     background-color: none;
     height: 324.78px;
-    width: 600px;
+    width: 400px;
   }
   
   .contact-grid {
     display: grid;
   }
   
-  .contact-form {
+  /* .contact-form { 
     max-width: 100%;
-  }
+  } */
     
   .contact-icon {
     color: #0056b3;
@@ -643,6 +648,10 @@ input:checked + .toggle-slider:before {
   .pricing-toggle {
     flex-direction: column;
   }
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
 }
   
   /* Responsive Design */
@@ -675,3 +684,18 @@ input:checked + .toggle-slider:before {
       grid-template-columns: 1fr;
     }
   }
+  /* Responsive Design */
+@media (max-width: 600px) {
+  footer {
+    /* display: flex; */
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .form-group input {
+    width: 400px;
+  }
+  .form-group textarea {
+    width: 400px;
+  }
+}
