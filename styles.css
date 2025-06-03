@@ -687,6 +687,9 @@ input:checked + .toggle-slider:before {
   }
   /* Responsive Design */
 @media (max-width: 430px) {
+  body {
+    width: 100%;
+  }
   footer {
     /* display: flex; */
     flex-direction: column;
