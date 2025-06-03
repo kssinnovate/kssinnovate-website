@@ -694,9 +694,9 @@ input:checked + .toggle-slider:before {
     width: 100%;
   }
   .form-group input {
-    width: 400px;
+    width: 300px;
   }
   .form-group textarea {
-    width: 400px;
+    width: 300px;
   }
 }
