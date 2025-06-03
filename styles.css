@@ -691,7 +691,7 @@ input:checked + .toggle-slider:before {
     width: 100%;
   }
   footer {
-    /* display: flex; */
+    display: flex; 
     flex-direction: column;
     height: 100%;
     width: 100%;
@@ -702,4 +702,9 @@ input:checked + .toggle-slider:before {
   .form-group textarea {
     width: 300px;
   }
+}
+
+/* Hide any stray horizontal overflow */
+html, body {
+  overflow-x: hidden;
 }
