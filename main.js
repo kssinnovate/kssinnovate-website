@@ -68,15 +68,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       // Personalize the notification email subject with the customer's name
-      contactForm.querySelector('[name="subject"]').value = name + ' - Quote Request';
+      contactForm.querySelector('[name="_subject"]').value = name + ' - KSS Innovate Quote Request';
 
-      // Submit to Netlify Forms
+      // Submit to Formsubmit.co
       const formData = new FormData(contactForm);
 
-      fetch('/', {
+      fetch('https://formsubmit.co/ajax/kssinnovate@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData
       })
         .then(function(response) {
           if (response.ok) {
