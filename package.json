@@ -1,0 +1,24 @@
+{
+  "name": "kssinnovate-website",
+  "version": "1.0.0",
+  "description": "This is the codebase for the KSS Innovate website - a professional software solutions and web development services company.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kssinnovate/kssinnovate-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kssinnovate/kssinnovate-website/issues"
+  },
+  "homepage": "https://github.com/kssinnovate/kssinnovate-website#readme",
+  "dependencies": {
+    "nodemailer": "^9.0.5"
+  }
+}
