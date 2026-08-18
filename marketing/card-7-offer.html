@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f0f4f8; font-family: 'Inter', sans-serif; }
+  body { display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; background: #f0f4f8; font-family: 'Inter', sans-serif; overflow: hidden; } @media (max-width: 1100px) { .card { transform: scale(calc(100vw / 1080)); transform-origin: top left; } }
   .card { width: 1080px; height: 1080px; background: linear-gradient(145deg, #ffffff, #e3f2fd, #ffffff); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; padding: 80px; text-align: center; }
   .top-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #1565c0, #42a5f5, #1565c0); }
   .card::before { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(21,101,192,0.06) 0%, transparent 70%); }
