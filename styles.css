@@ -379,12 +379,202 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
-  /* Footer */
-  footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: #ecf0f1;
+  /* Contact Section (Gradient Background - Psybergate Structure) */
+  .contact-section {
+    background: linear-gradient(135deg, #4a7ba7 0%, #0056b3 100%);
+    color: white;
+    padding: 4rem 2rem;
+    position: relative;
+  }
+
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .contact-left, .contact-middle, .contact-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-left h3, .contact-middle h3, .contact-right h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .contact-left h4, .contact-middle h4 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .footer-logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+  }
+
+  .footer-nav ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav ul li a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-nav ul li a::before {
+    content: '•';
+    margin-right: 0.8rem;
+  }
+
+  .footer-nav ul li a:hover {
+    color: #f0f0f0;
+  }
+
+  .contact-item-gradient {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s;
+  }
+
+  .contact-item-gradient:hover {
+    transform: translateX(5px);
+  }
+
+  .contact-item-gradient svg {
+    color: rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+  }
+
+  .contact-item-gradient a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-item-gradient a:hover {
+    color: #f0f0f0;
+  }
+
+  .social-links-gradient {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-links-gradient a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    color: #0056b3;
+    transition: all 0.3s;
+    border: 2px solid white;
+  }
+
+  .social-links-gradient a:hover {
+    background-color: transparent;
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .social-links-gradient svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-form-gradient {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-gradient .form-group {
+    margin-bottom: 0;
+  }
+
+  .contact-form-gradient label {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .contact-form-gradient input,
+  .contact-form-gradient textarea {
     width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    box-sizing: border-box;
+  }
+
+  .contact-form-gradient input::placeholder,
+  .contact-form-gradient textarea::placeholder {
+    color: #999;
+  }
+
+  .contact-form-gradient input:focus,
+  .contact-form-gradient textarea:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-form-gradient textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .btn-submit-gradient {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit-gradient:hover {
+    background-color: #003d82;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .footer-content {
