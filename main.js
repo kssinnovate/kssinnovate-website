@@ -34,24 +34,29 @@ document.addEventListener("DOMContentLoaded", function() {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      console.log(email);
-      console.log("Email")
-      
-      const message = document.getElementById('message').value;
-      const number = document.getElementById('number').value;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const number = document.getElementById('number').value.trim();
 
+      // Validate phone
+      const phoneRegex = /^\+?[0-9]{10,15}$/;
+      if (!phoneRegex.test(number)) {
+        showToast('Invalid Phone', 'Please enter a valid phone number (10–15 digits).');
+        return;
+      }
 
-        // Using EmailJS to send emails from client-side
+      // Using EmailJS to send emails from client-side
       const templateParams = {
-        title: name,
+        to_name: 'KSS Innovate',
         from_name: name,
+        from_email: email,
         reply_to: email,
         email: email,
-        message: message,
-        number: number,
-        from_email: email
+        subject: 'New Enquiry from ' + name + ' via KSS Innovate Website',
+        title: 'New Website Enquiry',
+        message: 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + number + '\n\nMessage:\n' + message,
+        number: number
       };
       
       emailjs.send('service_j6rxabe', 'template_2g04g09', templateParams)
@@ -61,19 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }, function(error) {
           console.error('Email error:', error);
           showToast('Error', 'Failed to send message. Please try again.');
-          contactForm.reset();
         });
     });
   }
-
-  document.querySelector("form").addEventListener("submit", function (e) {
-    const phone = document.getElementById("number").value;
-    const regex = /^\+?[0-9]{10,15}$/;
-    if (!regex.test(phone)) {
-      e.preventDefault();
-      alert("Please enter a valid phone number (10–15 digits, optional +).");
-    }
-  });
   
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
