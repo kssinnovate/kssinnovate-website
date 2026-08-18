@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KSS Innovate - Why Choose Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #1a1a2e; font-family: 'Inter', sans-serif; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: linear-gradient(145deg, #0a1628 0%, #0d2137 40%, #0a1628 100%);
+    display: flex; flex-direction: column; padding: 70px 80px;
+    position: relative; overflow: hidden;
+  }
+  .top-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #0056b3, #007bff, #0056b3); }
+  .card::before {
+    content: ''; position: absolute; bottom: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,86,179,0.1) 0%, transparent 70%);
+  }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; z-index: 1; }
+  .logo-area { display: flex; align-items: center; gap: 14px; }
+  .logo-area img { width: 50px; height: 50px; border-radius: 10px; }
+  .logo-area span { font-size: 22px; font-weight: 700; color: #fff; }
+  .title { font-size: 46px; font-weight: 900; color: #fff; z-index: 1; margin-bottom: 50px; }
+  .title span { color: #007bff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; z-index: 1; flex: 1; }
+  .item {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 30px;
+  }
+  .item-icon { font-size: 36px; margin-bottom: 14px; }
+  .item-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .item-desc { font-size: 16px; color: #8899aa; line-height: 1.5; }
+  .footer { z-index: 1; text-align: center; margin-top: 40px; }
+  .footer-text { font-size: 18px; color: #5a7a9a; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top-bar"></div>
+  <div class="header">
+    <div class="logo-area">
+      <img src="../assets/logo.jpg" alt="KSS Innovate" />
+      <span>KSS Innovate</span>
+    </div>
+  </div>
+  <div class="title">Why Choose <span>KSS Innovate</span>?</div>
+  <div class="grid">
+    <div class="item">
+      <div class="item-icon">💰</div>
+      <div class="item-title">Affordable Pricing</div>
+      <div class="item-desc">Quality websites starting from just R3,500. Built for startups and small businesses.</div>
+    </div>
+    <div class="item">
+      <div class="item-icon">📱</div>
+      <div class="item-title">Mobile-First Design</div>
+      <div class="item-desc">Every site looks stunning on phones, tablets, and desktops. Your customers are on mobile.</div>
+    </div>
+    <div class="item">
+      <div class="item-icon">🚀</div>
+      <div class="item-title">Fast Delivery</div>
+      <div class="item-desc">Get your website up and running quickly. We respect your time and deadlines.</div>
+    </div>
+    <div class="item">
+      <div class="item-icon">🤝</div>
+      <div class="item-title">Ongoing Support</div>
+      <div class="item-desc">We don't disappear after launch. Free support included, with options to extend.</div>
+    </div>
+    <div class="item">
+      <div class="item-icon">🔍</div>
+      <div class="item-title">Google Ready</div>
+      <div class="item-desc">Built with SEO best practices so your customers can actually find you online.</div>
+    </div>
+    <div class="item">
+      <div class="item-icon">🇿🇦</div>
+      <div class="item-title">Local & Personal</div>
+      <div class="item-desc">Based in Cape Town. We understand the South African market and your needs.</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-text">kss-innovate.netlify.app</div>
+  </div>
+</div>
+</body>
+</html>
+
