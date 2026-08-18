@@ -39,12 +39,36 @@ document.addEventListener("DOMContentLoaded", function() {
       const message = document.getElementById('message').value.trim();
       const number = document.getElementById('number').value.trim();
 
-      // Validate phone
+      // Validate required fields are filled in
+      if (!name) {
+        showToast('Missing Name', 'Please enter your name.');
+        return;
+      }
+      if (!email) {
+        showToast('Missing Email', 'Please enter your email address.');
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showToast('Invalid Email', 'Please enter a valid email address.');
+        return;
+      }
+      if (!number) {
+        showToast('Missing Telephone', 'Please enter your telephone number.');
+        return;
+      }
       const phoneRegex = /^\+?[0-9]{10,15}$/;
       if (!phoneRegex.test(number)) {
         showToast('Invalid Phone', 'Please enter a valid phone number (10–15 digits).');
         return;
       }
+      if (!message) {
+        showToast('Missing Message', 'Please enter a message.');
+        return;
+      }
+
+      // Personalize the notification email subject with the customer's name
+      contactForm.querySelector('[name="subject"]').value = name + ' - Quote Request';
 
       // Submit to Netlify Forms
       const formData = new FormData(contactForm);
