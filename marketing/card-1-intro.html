@@ -37,7 +37,10 @@
     color: #1565c0; padding: 14px 28px; border-radius: 50px;
     font-size: 17px; font-weight: 600;
   }
-  .website { position: absolute; bottom: 50px; font-size: 18px; color: #546e7a; font-weight: 600; z-index: 1; }
+  .website { position: absolute; bottom: 50px; font-size: 18px; color: #546e7a; font-weight: 600; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .website a { text-decoration: none; color: #546e7a; }
+  .visit-btn { display: inline-flex; align-items: center; gap: 10px; background: #1565c0; color: #fff; padding: 14px 30px; border-radius: 50px; font-size: 17px; font-weight: 700; text-decoration: none; }
+  .visit-btn svg { width: 20px; height: 20px; fill: #fff; }
 </style>
 </head>
 <body>
@@ -55,7 +58,10 @@
     <div class="service-pill">⚙️ Custom Software</div>
     <div class="service-pill">📊 Data Analytics & Dashboards</div>
   </div>
-  <div class="website">kss-innovate.netlify.app</div>
+  <div class="website">
+    <a href="https://www.kssinnovate.co.za" class="visit-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>Visit Our Website</a>
+    <span>www.kssinnovate.co.za</span>
+  </div>
 </div>
 </body>
 </html>
