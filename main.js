@@ -67,31 +67,21 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Update subject with customer name
-      contactForm.querySelector('[name="subject"]').value = name + ' - KSS Innovate Quote Request';
+      // Send via WhatsApp (pre-formatted message)
+      const whatsappNumber = '27728580193';
+      const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(number)}%0A*Message:* ${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-      // Submit to Web3Forms
-      const formData = new FormData(contactForm);
+      // Also send via email (mailto fallback)
+      const mailSubject = encodeURIComponent(`Quote Request from ${name}`);
+      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${number}\nMessage: ${message}`);
+      const mailtoUrl = `mailto:kssinnovate@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      })
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          if (data.success) {
-            showToast('Message Sent!', 'We\'ll get back to you soon.');
-            contactForm.reset();
-          } else {
-            showToast('Error', 'Failed to send message. Please try again.');
-          }
-        })
-        .catch(function(error) {
-          console.error('Form error:', error);
-          showToast('Error', 'Failed to send message. Please try again.');
-        });
+      // Open WhatsApp with the message
+      window.open(whatsappUrl, '_blank');
+      
+      showToast('Message Sent!', 'WhatsApp opened with your message. You can also reach us via email.');
+      contactForm.reset();
     });
   }
   
