@@ -23,18 +23,6 @@
     
     <link rel="icon" href="assets/logo.jpg" type="image/png">
     <link rel="stylesheet" href="styles.css">
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "R6pBVvdsqv0wN_Gqi",
-            });
-        })
-        ();
-    </script>    
   </head>
 
   <body>
@@ -348,7 +336,9 @@
 
           <div class="footer-column footer-form-column">
             <h3>Contact Us</h3>
-            <form id="contactForm" class="footer-contact-form">
+            <form id="contactForm" name="contact" class="footer-contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name *" required />
@@ -359,7 +349,7 @@
               </div>
               <div class="form-group">
                 <label for="number">Telephone</label>
-                <input type="tel" id="number" name="number" placeholder="Telephone *" pattern="^\+?[0-9]{10,15}$" required />
+                <input type="tel" id="number" name="number" placeholder="Telephone *" required />
               </div>
               <div class="form-group">
                 <label for="message">Message</label>

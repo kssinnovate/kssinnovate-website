@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Contact form handling
+  // Contact form handling (Netlify Forms)
   const contactForm = document.getElementById('contactForm');
   
   if (contactForm) {
@@ -46,25 +46,24 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Using EmailJS to send emails from client-side
-      const templateParams = {
-        to_name: 'KSS Innovate',
-        from_name: name,
-        from_email: email,
-        reply_to: email,
-        email: email,
-        subject: 'New Enquiry from ' + name + ' via KSS Innovate Website',
-        title: 'New Website Enquiry',
-        message: 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + number + '\n\nMessage:\n' + message,
-        number: number
-      };
-      
-      emailjs.send('service_j6rxabe', 'template_2g04g09', templateParams)
-        .then(function() {
-          showToast('Message Sent!', 'We\'ll get back to you soon.');
-          contactForm.reset();
-        }, function(error) {
-          console.error('Email error:', error);
+      // Submit to Netlify Forms
+      const formData = new FormData(contactForm);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(function(response) {
+          if (response.ok) {
+            showToast('Message Sent!', 'We\'ll get back to you soon.');
+            contactForm.reset();
+          } else {
+            showToast('Error', 'Failed to send message. Please try again.');
+          }
+        })
+        .catch(function(error) {
+          console.error('Form error:', error);
           showToast('Error', 'Failed to send message. Please try again.');
         });
     });
