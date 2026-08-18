@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
+      // Personalize the notification email subject with the customer's name
+      contactForm.querySelector('[name="subject"]').value = 'New Customer Quote Notification - ' + name;
+
       // Submit to Netlify Forms
       const formData = new FormData(contactForm);
 
