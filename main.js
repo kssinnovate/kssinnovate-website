@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const mailtoUrl = `mailto:kssinnovate@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
       // Open WhatsApp with the message
-      window.open(whatsappUrl, '_blank');
+      window.location.href = whatsappUrl;
       
       showToast('Message Sent!', 'WhatsApp opened with your message. You can also reach us via email.');
       contactForm.reset();
