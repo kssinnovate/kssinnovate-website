@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Submit to Web3Forms (email)
       const formData = new FormData();
-      formData.append('access_key', '0f53d741-014e-4779-84e4-69e682e498e8');
+      formData.append('access_key', '963cb854-4cb3-41ac-8951-ade0a985703c');
       formData.append('subject', name + ' - KSS Innovate Quote Request');
       formData.append('from_name', 'KSS Innovate Request Notifications');
       formData.append('name', name);
