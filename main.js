@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Contact form handling (Netlify Forms)
+  // Contact form handling (Formsubmit.co)
   const contactForm = document.getElementById('contactForm');
   
   if (contactForm) {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Personalize the notification email subject with the customer's name
+      // Update subject with customer name
       contactForm.querySelector('[name="_subject"]').value = name + ' - KSS Innovate Quote Request';
 
       // Submit to Formsubmit.co
@@ -78,7 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
         body: formData
       })
         .then(function(response) {
-          if (response.ok) {
+          return response.json();
+        })
+        .then(function(data) {
+          if (data.success) {
             showToast('Message Sent!', 'We\'ll get back to you soon.');
             contactForm.reset();
           } else {
