@@ -1,30 +1,33 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  // Contact form handling
-  // const nodemailer = require('nodemailer');
+  // Hamburger menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
 
-  // const transporter = nodemailer.createTransport({
-  //   service: 'Gmail',
-  //   auth: {
-  //     user: 'youremail@gmail.com',
-  //     pass: 'yourpassword_or_app_password'
-  //   }
-  // });
-  
-  // const mailOptions = {
-  //   from: 'youremail@gmail.com',
-  //   to: 'recipient@example.com',
-  //   subject: 'Subject Here',
-  //   text: 'Your message here'
-  // };
-  
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (error) {
-  //     console.error(error);
-  //   } else {
-  //     console.log('Email sent: ' + info.response);
-  //   }
-  // });
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('header')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+
+  // Contact form handling
   const contactForm = document.getElementById('contactForm');
   
   if (contactForm) {
