@@ -67,21 +67,35 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Send via WhatsApp (pre-formatted message)
-      const whatsappNumber = '27728580193';
-      const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(number)}%0A*Message:* ${encodeURIComponent(message)}`;
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+      // Submit to Web3Forms (email)
+      const formData = new FormData();
+      formData.append('access_key', '0f53d741-014e-4779-84e4-69e682e498e8');
+      formData.append('subject', name + ' - KSS Innovate Quote Request');
+      formData.append('from_name', 'KSS Innovate Request Notifications');
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', number);
+      formData.append('message', message);
 
-      // Also send via email (mailto fallback)
-      const mailSubject = encodeURIComponent(`Quote Request from ${name}`);
-      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${number}\nMessage: ${message}`);
-      const mailtoUrl = `mailto:kssinnovate@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-
-      // Open WhatsApp with the message
-      window.location.href = whatsappUrl;
-      
-      showToast('Message Sent!', 'WhatsApp opened with your message. You can also reach us via email.');
-      contactForm.reset();
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          if (data.success) {
+            showToast('Message Sent!', 'We\'ll get back to you soon.');
+            contactForm.reset();
+          } else {
+            showToast('Error', 'Failed to send message. Please try again.');
+          }
+        })
+        .catch(function(error) {
+          console.error('Form error:', error);
+          showToast('Error', 'Failed to send message. Please try again.');
+        });
     });
   }
   
