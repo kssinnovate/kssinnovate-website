@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       // Update subject with customer name
-      contactForm.querySelector('[name="_subject"]').value = name + ' - KSS Innovate Quote Request';
+      contactForm.querySelector('[name="subject"]').value = name + ' - KSS Innovate Quote Request';
 
-      // Submit to Formsubmit.co
+      // Submit to Web3Forms
       const formData = new FormData(contactForm);
 
-      fetch('https://formsubmit.co/ajax/kssinnovate@gmail.com', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData
       })

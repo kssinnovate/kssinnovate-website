@@ -344,12 +344,11 @@
 
           <div class="footer-column footer-form-column">
             <h3>Contact Us</h3>
-            <form id="contactForm" class="footer-contact-form" method="POST" action="https://formsubmit.co/kssinnovate@gmail.com">
-              <input type="hidden" name="_subject" value="KSS Innovate - New Quote Request" />
-              <input type="hidden" name="_next" value="https://www.kssinnovate.co.za/" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_autoresponse" value="Thank you for contacting KSS Innovate! We have received your message and will get back to you shortly." />
+            <form id="contactForm" class="footer-contact-form" method="POST" action="https://api.web3forms.com/submit">
+              <input type="hidden" name="access_key" value="d4f1c04e-c19f-4a89-9da0-5f3e5e498a6e" />
+              <input type="hidden" name="subject" value="KSS Innovate - New Quote Request" />
+              <input type="hidden" name="from_name" value="KSS Innovate Request Notifications" />
+              <input type="hidden" name="redirect" value="https://www.kssinnovate.co.za/" />
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name *" required />
