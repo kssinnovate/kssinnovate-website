@@ -23,10 +23,14 @@
   .contact-label { font-size: 14px; color: #1565c0; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
   .contact-value { font-size: 20px; color: #1a1a2e; font-weight: 600; }
   .social-links { z-index: 1; display: flex; gap: 20px; margin-top: 40px; }
-  .social-link { width: 56px; height: 56px; background: #e3f2fd; border: 1px solid #bbdefb; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
+  .social-link { width: 56px; height: 56px; background: #e3f2fd; border: 1px solid #bbdefb; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; flex-direction: column; }
   .social-link:hover { background: #bbdefb; }
   .social-link svg { width: 26px; height: 26px; }
-  .bottom-cta { z-index: 1; margin-top: 30px; background: #1565c0; color: #ffffff; padding: 18px 50px; border-radius: 50px; font-size: 20px; font-weight: 700; }
+  .social-handles { z-index: 1; display: flex; gap: 20px; margin-top: 10px; }
+  .social-handle { font-size: 12px; color: #546e7a; font-weight: 500; text-align: center; width: 56px; word-break: break-all; }
+  .social-label { z-index: 1; margin-top: 8px; font-size: 14px; color: #546e7a; font-weight: 500; text-align: center; }
+  .bottom-cta { z-index: 1; margin-top: 30px; background: #1565c0; color: #ffffff; padding: 18px 50px; border-radius: 50px; font-size: 20px; font-weight: 700; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .bottom-cta:hover { background: #0d47a1; }
 </style>
 </head>
 <body>
@@ -65,7 +69,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
     </a>
   </div>
-  <div class="bottom-cta">Visit kss-innovate.netlify.app</div>
+  <div class="social-handles">
+    <div class="social-handle">Facebook</div>
+    <div class="social-handle">Instagram</div>
+    <div class="social-handle">LinkedIn</div>
+    <div class="social-handle">WhatsApp</div>
+    <div class="social-handle">Email</div>
+  </div>
+  <a href="https://kss-innovate.netlify.app/" class="bottom-cta" target="_blank" rel="noopener noreferrer">Click to Visit Our Website</a>
 </div>
 </body>
 </html>
